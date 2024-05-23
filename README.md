@@ -27,3 +27,33 @@
 ---------------
 {}
 ```
+
+## 4. PRD转接口设计定义
+```
+根据以下描述，返回一个表格，表格里每一行包含以下6列：接口用途、请求方式（GET｜POST）、接受参数、request案例、成功时reponse、失败时response
+
+------------
+{}
+```
+
+## 5. PRD转数据库设计定义
+```
+根据以下描述，返回一个表格，表格里每一行包含以下3列：表名、字段名、生成的SQL语句
+
+------------
+数据库设计
+用户表（users）
+
+用户ID（user_id）
+手机号码（phone）
+邮箱地址（email）
+密码（password）
+第三方平台标识（platform）
+第三方认证信息（auth_info）
+登录记录表（login_records）
+
+记录ID（record_id）
+用户ID（user_id）
+登录时间（login_time）
+登录方式（login_method）
+```
