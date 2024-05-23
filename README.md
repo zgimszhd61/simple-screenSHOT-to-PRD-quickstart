@@ -57,3 +57,47 @@
 登录时间（login_time）
 登录方式（login_method）
 ```
+
+## 6. 数据到数据库
+### 创建数据库的SQL语句
+
+```sql
+-- 创建用户表
+CREATE TABLE users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    phone VARCHAR(20),
+    email VARCHAR(50),
+    password VARCHAR(255),
+    platform VARCHAR(20),
+    auth_info TEXT
+);
+
+-- 创建登录记录表
+CREATE TABLE login_records (
+    record_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    login_time DATETIME,
+    login_method VARCHAR(20),
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
+```
+
+### 插入数据到数据库的SQL语句
+
+```sql
+-- 插入数据到用户表
+INSERT INTO users (phone, email, password, platform, auth_info) VALUES 
+('1234567890', 'user1@example.com', 'password1', 'wechat', 'auth_info1'),
+('0987654321', 'user2@example.com', 'password2', 'qq', 'auth_info2'),
+('1122334455', 'user3@example.com', 'password3', 'wechat', 'auth_info3');
+
+-- 插入数据到登录记录表
+INSERT INTO login_records (user_id, login_time, login_method) VALUES 
+(1, '2024-05-23 10:00:00', 'password'),
+(2, '2024-05-23 10:05:00', 'password'),
+(3, '2024-05-23 10:10:00', 'password'),
+(1, '2024-05-23 10:15:00', 'wechat'),
+(2, '2024-05-23 10:20:00', 'qq');
+```
+
+这两组SQL语句分别创建了所需的数据库表并插入了一些示例数据。
