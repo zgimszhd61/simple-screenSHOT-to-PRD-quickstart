@@ -101,3 +101,11 @@ INSERT INTO login_records (user_id, login_time, login_method) VALUES
 ```
 
 这两组SQL语句分别创建了所需的数据库表并插入了一些示例数据。
+
+
+### 复杂平台进行分析
+```
+从第一性原理看，一个收款支付系统包含哪些主要模块
+从第一性原理看，一个联盟营销系统包含哪些主要模块
+
+```
